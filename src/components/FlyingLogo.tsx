@@ -71,7 +71,7 @@ export default function FlyingLogo({
         href="#top"
         className="pointer-events-auto whitespace-nowrap font-display text-[clamp(4rem,18vw,13rem)] font-bold leading-[0.85] tracking-[-0.02em]"
       >
-        Ishita
+        Divy
       </a>
     </motion.div>
   );

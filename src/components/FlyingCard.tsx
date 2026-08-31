@@ -12,21 +12,14 @@ const SCENES = { orbit: OrbitScene, delivery: DeliveryScene } as const;
 type Pose = { top: number; left: number; width: number; height: number; rotate: number };
 
 /**
- * One project's card, rendered as a fixed-position overlay that travels
- * through three poses as the user scrolls the hero:
+ * One project card rendered as a fixed-position overlay that travels
+ * through three poses driven by the hero scroll progress:
  *
- *   start (small, beside the hero text) → peak (enlarged, dominant)
- *   → end (settled into its slot in the "My Work" grid below)
+ *   start (small, stacked in pile) → peak (enlarged, fanned out)
+ *   → end (settled into its 2×2 grid slot in "My Work")
  *
- * All five animated properties (top/left/width/height/rotate) are plain
- * geometry/transform values — deliberately not opacity, see src/lib/motion.ts
- * for why. `end` is measured live from the grid slot rather than hardcoded:
- * because the grid slot sits in normal document flow immediately after the
- * pinned hero, its position *relative to the Work section's own top* is
- * scroll-independent — and progress===1 is defined (via useScroll's
- * "end start" offset) to land exactly when the Work section's top reaches
- * the viewport's top. So that relative offset is already the correct
- * viewport-space target at progress===1, with no extra correction needed.
+ * At progress === 1 the card fades out so the in-flow grid card
+ * (rendered by WorkSection) takes over seamlessly.
  */
 export default function FlyingCard({
   project,
@@ -48,8 +41,6 @@ export default function FlyingCard({
       const vw = window.innerWidth;
       const vh = window.innerHeight;
 
-      // Clamp widths so a card never overflows past the viewport's right
-      // edge on narrower screens, regardless of the configured pose.
       const startWidth = Math.min(config.start.width, vw - vw * config.start.leftFrac - 24);
       const peakWidth = Math.min(config.peak.width, vw - vw * config.peak.leftFrac - 24);
 
@@ -91,24 +82,19 @@ export default function FlyingCard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridSlotRef, workSectionRef]);
 
-  // 0 → 0.55: start pose grows into the enlarged peak pose.
-  // 0.55 → 0.85: hold at peak — the dominant, "look at this" moment.
-  // 0.85 → 1: collapse into the grid slot. Keeping this window short (rather
-  // than sliding all the way from peak to end over the full 0–1 range) means
-  // the card only sweeps across the hero's bio text briefly, right as that
-  // text is itself scrolling away (the sticky hero starts unpinning well
-  // before progress 1), instead of dragging the sweep out across the whole
-  // scroll range.
-  const stops: [number, number, number, number] = [0, 0.55, 0.85, 1];
+  // start → peak → hold at peak → settle into grid → fade out
+  const stops: [number, number, number, number, number] = [0, 0.45, 0.70, 0.92, 1];
   const fallback = poses?.start ?? { top: 0, left: 0, width: 220, height: 165, rotate: 0 };
   const mid = poses?.peak ?? fallback;
   const end = poses?.end ?? fallback;
 
-  const top = useTransform(progress, stops, [fallback.top, mid.top, mid.top, end.top]);
-  const left = useTransform(progress, stops, [fallback.left, mid.left, mid.left, end.left]);
-  const width = useTransform(progress, stops, [fallback.width, mid.width, mid.width, end.width]);
-  const height = useTransform(progress, stops, [fallback.height, mid.height, mid.height, end.height]);
-  const rotate = useTransform(progress, stops, [fallback.rotate, mid.rotate, mid.rotate, end.rotate]);
+  const top = useTransform(progress, stops, [fallback.top, mid.top, mid.top, end.top, end.top]);
+  const left = useTransform(progress, stops, [fallback.left, mid.left, mid.left, end.left, end.left]);
+  const width = useTransform(progress, stops, [fallback.width, mid.width, mid.width, end.width, end.width]);
+  const height = useTransform(progress, stops, [fallback.height, mid.height, mid.height, end.height, end.height]);
+  const rotate = useTransform(progress, stops, [fallback.rotate, mid.rotate, mid.rotate, end.rotate, end.rotate]);
+  // Fade out once landed so in-flow cards in WorkSection take over
+  const opacity = useTransform(progress, [0.90, 1], [1, 0]);
 
   if (!poses) return null;
 
@@ -120,7 +106,7 @@ export default function FlyingCard({
 
   return (
     <motion.div
-      style={{ position: "fixed", top, left, width, height, rotate, zIndex: 40 }}
+      style={{ position: "fixed", top, left, width, height, rotate, opacity, zIndex: 40 }}
       className="pointer-events-none"
     >
       <div

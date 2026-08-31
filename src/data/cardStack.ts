@@ -1,12 +1,3 @@
-/**
- * Poses for the project card stack that lives beside the hero text.
- *
- * `start` is the small pose next to the hero copy (viewport-fraction based,
- * so it scales with window size). `peak` is the enlarged mid-scroll pose —
- * the stack visually dominates the screen just before it settles into the
- * grid. The final ("end") pose isn't listed here: it's measured live from
- * the actual grid slot in WorkSection (see FlyingCard.tsx).
- */
 export type StackPose = {
   topFrac: number;
   leftFrac: number;
@@ -14,15 +5,30 @@ export type StackPose = {
   rotate: number;
 };
 
+/**
+ * 4-card stack. In the hero, all cards sit as a tight overlapping pile
+ * in the right half of the viewport — vertically centered with the hero
+ * text, with subtle rotation offsets creating the fanned-deck look.
+ */
 export const STACK_CONFIG: Record<string, { start: StackPose; peak: StackPose }> = {
+  // Back card (rendered first = lowest z) — rotated furthest left
   "scrollers-to-readers": {
-    start: { topFrac: 0.2, leftFrac: 0.6, width: 220, rotate: -8 },
-    // Peak stays right of the ~560-640px bio text column at any reasonable
-    // viewport width so the enlarged cards never cover the hero copy.
-    peak: { topFrac: 0.1, leftFrac: 0.42, width: 520, rotate: -4 },
+    start: { topFrac: 0.22, leftFrac: 0.48, width: 400, rotate: -12 },
+    peak: { topFrac: 0.08, leftFrac: 0.38, width: 540, rotate: -6 },
   },
+  // Second from back — slight left lean
   "pagarbook-order-management": {
-    start: { topFrac: 0.4, leftFrac: 0.68, width: 220, rotate: 7 },
-    peak: { topFrac: 0.36, leftFrac: 0.53, width: 520, rotate: 4 },
+    start: { topFrac: 0.24, leftFrac: 0.50, width: 400, rotate: -5 },
+    peak: { topFrac: 0.16, leftFrac: 0.44, width: 540, rotate: -2 },
+  },
+  // Third — slight right lean
+  "prime-membership": {
+    start: { topFrac: 0.26, leftFrac: 0.52, width: 400, rotate: 3 },
+    peak: { topFrac: 0.24, leftFrac: 0.48, width: 540, rotate: 2 },
+  },
+  // Top card (rendered last = highest z) — rotated furthest right
+  "credit-card-journey": {
+    start: { topFrac: 0.28, leftFrac: 0.54, width: 400, rotate: 9 },
+    peak: { topFrac: 0.32, leftFrac: 0.52, width: 540, rotate: 5 },
   },
 };

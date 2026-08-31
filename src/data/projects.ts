@@ -35,4 +35,23 @@ export const projects: Project[] = [
     tags: [{ label: "Case Study", tone: "green" }],
     variant: "delivery",
   },
+  {
+    id: "prime-membership",
+    theme: "forest",
+    title: "Reimagining Prime Membership Value",
+    subtitle: "Prime & Saving",
+    tags: [{ label: "Case Study", tone: "green" }],
+    variant: "delivery",
+  },
+  {
+    id: "credit-card-journey",
+    theme: "ink",
+    title: "Simplifying Credit Card Application Experience",
+    subtitle: "Co-Brand Card Journey / Ecommerce Site",
+    tags: [
+      { label: "case study", tone: "blue" },
+      { label: "UX Design", tone: "blue" },
+    ],
+    variant: "orbit",
+  },
 ];

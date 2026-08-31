@@ -16,11 +16,11 @@ export default function SiteShell() {
   const logoSlotRef = useRef<HTMLSpanElement>(null);
   const workSectionRef = useRef<HTMLElement>(null);
 
-  // Fixed at two — matches projects.length. Add another ref here if a third
-  // project is ever added (see WorkSection's gridSlotRefs prop).
   const gridSlotRef0 = useRef<HTMLDivElement>(null);
   const gridSlotRef1 = useRef<HTMLDivElement>(null);
-  const gridSlotRefs = [gridSlotRef0, gridSlotRef1];
+  const gridSlotRef2 = useRef<HTMLDivElement>(null);
+  const gridSlotRef3 = useRef<HTMLDivElement>(null);
+  const gridSlotRefs = [gridSlotRef0, gridSlotRef1, gridSlotRef2, gridSlotRef3];
 
   const { scrollYProgress } = useScroll({
     target: heroRef,

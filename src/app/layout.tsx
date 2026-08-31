@@ -4,7 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ishita — Product Designer",
+  title: "Divy — Product Designer",
   description:
     "Product Designer with a love for motion, interaction design and crime documentaries.",
 };

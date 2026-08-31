@@ -39,7 +39,7 @@ export default function Hero({
             </motion.span>
 
             {/*
-              Invisible, layout-only spacer. The real, visible "Ishita" headline is
+              Invisible, layout-only spacer. The real, visible "Divy" headline is
               FlyingLogo (rendered in SiteShell as a fixed-position overlay) — it
               starts by measuring this element's rect so it lines up exactly here,
               then animates on scroll toward the nav logo slot. This element just
@@ -50,12 +50,12 @@ export default function Hero({
               aria-hidden
               className="invisible mb-2 whitespace-nowrap font-display text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.85] tracking-[-0.02em] md:mb-3"
             >
-              Ishita
+              Divy
             </h1>
 
             <motion.span
               style={{ opacity: hereOpacity }}
-              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl"
+              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl mt-41"
             >
               Here
             </motion.span>
@@ -64,8 +64,7 @@ export default function Hero({
               style={{ opacity: paraOpacity, y: paraY }}
               className="mt-8 max-w-md text-left font-sans text-xl font-light leading-snug text-foreground md:mt-10 md:text-2xl"
             >
-              I am a Product Designer with a love for motion, interaction
-              design and crime documentries
+              I am a Full Stack Web Developer <br />with experience with 1+ year.
             </motion.p>
           </div>
         </div>

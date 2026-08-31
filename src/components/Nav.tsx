@@ -48,15 +48,14 @@ export default function Nav({
       <nav className="relative mx-auto h-20 w-full max-w-[1600px] px-6 md:px-12">
         {/*
           Invisible, layout-only slot. FlyingLogo (rendered in SiteShell) measures
-          this rect and animates the real "Ishita" text onto it — this span is never
-          itself visible, it just reserves and reports the target position/size.
+          this rect and animates the real text onto it.
         */}
         <span
           ref={logoSlotRef}
           aria-hidden
           className="invisible absolute left-6 top-1/2 -translate-y-1/2 whitespace-nowrap font-display text-xl font-semibold md:left-12"
         >
-          Ishita
+          Divy
         </span>
 
         {LINKS.map((link) => (
