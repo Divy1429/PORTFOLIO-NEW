@@ -1,16 +1,28 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { useScroll } from "framer-motion";
 import Nav from "./Nav";
 import Hero from "./Hero";
 import FlyingLogo from "./FlyingLogo";
 import FlyingCard from "./FlyingCard";
 import WorkSection from "./WorkSection";
+import MobileShell from "./MobileShell";
 import { projects } from "@/data/projects";
 import { STACK_CONFIG } from "@/data/cardStack";
 
 export default function SiteShell() {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const heroRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const logoSlotRef = useRef<HTMLSpanElement>(null);
@@ -26,6 +38,10 @@ export default function SiteShell() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
+
+  if (isMobile === true) {
+    return <MobileShell />;
+  }
 
   return (
     <>

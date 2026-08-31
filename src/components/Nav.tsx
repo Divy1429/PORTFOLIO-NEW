@@ -23,7 +23,6 @@ export default function Nav({
   return (
     <motion.header
       style={{
-        // eslint-disable-next-line react-hooks/rules-of-hooks
         backgroundColor: useTransform(bgOpacity, (v) => `rgba(248, 244, 236, ${v * 0.92})`),
       }}
       className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
