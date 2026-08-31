@@ -48,7 +48,7 @@ export default function Hero({
             <h1
               ref={headlineRef}
               aria-hidden
-              className="invisible mb-2 whitespace-nowrap font-display text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.85] tracking-[-0.02em] md:mb-3"
+              className="invisible mb-2 whitespace-nowrap font-display text-[clamp(4rem,18vw,13rem)] font-bold leading-[0.85] tracking-[-0.02em] md:mb-3"
             >
               Divy
             </h1>

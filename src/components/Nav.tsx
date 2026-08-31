@@ -35,7 +35,7 @@ export default function Nav({
         <span
           ref={logoSlotRef}
           aria-hidden
-          className="invisible whitespace-nowrap font-display text-xl font-semibold"
+          className="invisible whitespace-nowrap font-display text-base font-bold"
         >
           Divy
         </span>
