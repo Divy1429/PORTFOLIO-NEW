@@ -48,14 +48,14 @@ export default function Hero({
             <h1
               ref={headlineRef}
               aria-hidden
-              className="invisible mb-2 whitespace-nowrap font-display text-[clamp(4rem,18vw,13rem)] font-bold leading-[0.85] tracking-[-0.02em] md:mb-3"
+              className="invisible mb-2 whitespace-nowrap font-display text-[clamp(4rem,18vw,13rem)] font-bold leading-[0.85] tracking-[-0.02em] md:mb-0"
             >
               Divy
             </h1>
 
             <motion.span
               style={{ opacity: hereOpacity }}
-              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl mt-20 ml-2"
+              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl  ml-2"
             >
               Here
             </motion.span>
