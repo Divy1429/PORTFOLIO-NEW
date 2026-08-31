@@ -1,7 +1,7 @@
 "use client";
 
 import { useMotionValueEvent, type MotionValue } from "framer-motion";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 
 /**
  * Mirrors a MotionValue's live number into React state.
@@ -11,8 +11,15 @@ import { useState } from "react";
  * like scale/x/y update fine; plain `opacity` gets stuck at its initial value).
  * Driving opacity from plain React state sidesteps that and is reliable.
  */
-export function useProgressNumber(progress: MotionValue<number>) {
+export default function useProgressNumber(progress: MotionValue<number>) {
   const [value, setValue] = useState(progress.get());
+
+  // Synchronize on mount to ensure we have the correct target-bound scroll progress
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setValue(progress.get());
+  }, [progress]);
+
   useMotionValueEvent(progress, "change", setValue);
   return value;
 }
@@ -25,3 +32,4 @@ export function interpolate(
   const t = Math.min(1, Math.max(0, (value - inMin) / (inMax - inMin)));
   return outMin + t * (outMax - outMin);
 }
+export { useProgressNumber };

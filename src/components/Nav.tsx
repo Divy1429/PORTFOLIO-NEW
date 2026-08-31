@@ -1,61 +1,58 @@
 "use client";
 
 import { motion, useTransform, type MotionValue } from "framer-motion";
-import { interpolate, useProgressNumber } from "@/lib/motion";
+import type { RefObject } from "react";
 
 const LINKS = [
-  { label: "Work", href: "#work", spread: 3.2, clustered: 72.4 },
-  { label: "About", href: "#about", spread: 33.7, clustered: 79.3 },
-  { label: "Resume", href: "#resume", spread: 64.6, clustered: 86.7 },
-  { label: "Contact", href: "#contact", spread: 95.8, clustered: 94.5 },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Resume", href: "#resume" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
-function NavLink({
-  label,
-  href,
-  spread,
-  clustered,
+export default function Nav({
   progress,
+  logoSlotRef,
 }: {
-  label: string;
-  href: string;
-  spread: number;
-  clustered: number;
   progress: MotionValue<number>;
+  logoSlotRef: RefObject<HTMLSpanElement | null>;
 }) {
-  const left = useTransform(progress, [0, 0.5], [`${spread}%`, `${clustered}%`]);
+  // Fade in a subtle backdrop once the user starts scrolling
+  const bgOpacity = useTransform(progress, [0.02, 0.15], [0, 1]);
 
   return (
-    <motion.a
-      href={href}
-      style={{ left }}
-      className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-normal tracking-wide text-foreground/90 transition-opacity hover:opacity-60"
+    <motion.header
+      style={{
+        backgroundColor: useTransform(bgOpacity, (v) => `rgba(248, 244, 236, ${v * 0.92})`),
+      }}
+      className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm"
     >
-      {label}
-    </motion.a>
-  );
-}
-
-export default function Nav({ progress }: { progress: MotionValue<number> }) {
-  const p = useProgressNumber(progress);
-  const logoOpacity = interpolate(p, [0.28, 0.48], [0, 1]);
-  const logoScale = useTransform(progress, [0.28, 0.48], [0.7, 1]);
-
-  return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <nav className="relative mx-auto h-20 w-full max-w-[1600px] px-6 md:px-12">
-        <motion.a
-          href="#top"
-          style={{ opacity: logoOpacity, scale: logoScale }}
-          className="absolute left-6 top-1/2 -translate-y-1/2 font-display text-xl font-semibold md:left-12"
+      <nav className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between px-6 md:h-20 md:px-12">
+        {/*
+          Invisible, layout-only slot. FlyingLogo (rendered in SiteShell) measures
+          this rect and animates the real "Divy" text onto it.
+        */}
+        <span
+          ref={logoSlotRef}
+          aria-hidden
+          className="invisible whitespace-nowrap font-display text-xl font-semibold"
         >
-          Ishita
-        </motion.a>
+          Divy
+        </span>
 
-        {LINKS.map((link) => (
-          <NavLink key={link.label} progress={progress} {...link} />
-        ))}
+        {/* Right-aligned link group */}
+        <div className="flex items-center gap-8 md:gap-10">
+          {LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="whitespace-nowrap text-sm font-normal tracking-wide text-foreground/80 transition-colors duration-200 hover:text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
       </nav>
-    </header>
+    </motion.header>
   );
 }

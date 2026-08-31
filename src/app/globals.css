@@ -27,9 +27,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/*
+  No `scroll-behavior: smooth` here — Lenis (see SmoothScroll.tsx) owns all
+  scroll easing now. Keeping the native CSS smoothing too would fight
+  Lenis's own animation loop on every anchor jump.
+*/
 
 body {
   background: var(--background);
