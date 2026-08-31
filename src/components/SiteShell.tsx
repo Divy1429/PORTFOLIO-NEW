@@ -7,6 +7,7 @@ import Hero from "./Hero";
 import FlyingLogo from "./FlyingLogo";
 import FlyingCard from "./FlyingCard";
 import WorkSection from "./WorkSection";
+import AboutSection from "./AboutSection";
 import MobileShell from "./MobileShell";
 import { projects } from "@/data/projects";
 import { STACK_CONFIG } from "@/data/cardStack";
@@ -66,6 +67,7 @@ export default function SiteShell() {
 
       <Hero heroRef={heroRef} headlineRef={headlineRef} progress={scrollYProgress} />
       <WorkSection sectionRef={workSectionRef} gridSlotRefs={gridSlotRefs} heroProgress={scrollYProgress} />
+      <AboutSection />
     </>
   );
 }
