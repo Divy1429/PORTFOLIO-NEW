@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { clashDisplay, generalSans } from "./fonts/fonts";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({
       lang="en"
       className={`${clashDisplay.variable} ${generalSans.variable} antialiased`}
     >
-      <body className="bg-background text-foreground">{children}</body>
+      <body className="bg-background text-foreground">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }
