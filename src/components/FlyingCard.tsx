@@ -82,8 +82,9 @@ export default function FlyingCard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridSlotRef, workSectionRef]);
 
-  // start → peak → hold at peak → settle into grid → fade out
-  const stops: [number, number, number, number, number] = [0, 0.45, 0.70, 0.92, 1];
+  // start → peak (gradual) → hold at peak → settle into grid (slow)
+  // Wider ranges = smoother transitions with Lenis' momentum
+  const stops: [number, number, number, number, number] = [0, 0.35, 0.65, 0.90, 1];
   const fallback = poses?.start ?? { top: 0, left: 0, width: 220, height: 165, rotate: 0 };
   const mid = poses?.peak ?? fallback;
   const end = poses?.end ?? fallback;
@@ -94,7 +95,7 @@ export default function FlyingCard({
   const height = useTransform(progress, stops, [fallback.height, mid.height, mid.height, end.height, end.height]);
   const rotate = useTransform(progress, stops, [fallback.rotate, mid.rotate, mid.rotate, end.rotate, end.rotate]);
   // Fade out once landed so in-flow cards in WorkSection take over
-  const opacity = useTransform(progress, [0.90, 1], [1, 0]);
+  const opacity = useTransform(progress, [0.88, 1], [1, 0]);
 
   if (!poses) return null;
 

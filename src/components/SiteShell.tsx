@@ -49,7 +49,7 @@ export default function SiteShell() {
       ))}
 
       <Hero heroRef={heroRef} headlineRef={headlineRef} progress={scrollYProgress} />
-      <WorkSection sectionRef={workSectionRef} gridSlotRefs={gridSlotRefs} />
+      <WorkSection sectionRef={workSectionRef} gridSlotRefs={gridSlotRefs} heroProgress={scrollYProgress} />
     </>
   );
 }

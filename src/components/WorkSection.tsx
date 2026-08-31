@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useTransform, type MotionValue } from "framer-motion";
 import type { RefObject } from "react";
 import { projects, type ProjectTag } from "@/data/projects";
 import OrbitScene from "./OrbitScene";
@@ -26,17 +26,25 @@ function Tag({ tag }: { tag: ProjectTag }) {
 export default function WorkSection({
   sectionRef,
   gridSlotRefs,
+  heroProgress,
 }: {
   sectionRef: RefObject<HTMLElement | null>;
   gridSlotRefs: RefObject<HTMLDivElement | null>[];
+  heroProgress: MotionValue<number>;
 }) {
+  // Cards stay invisible until the flying overlays have almost fully landed
+  const contentOpacity = useTransform(heroProgress, [0.88, 1], [0, 1]);
+
   return (
     <section
       id="work"
       ref={sectionRef}
       className="relative bg-background pb-24 pt-24 md:pt-32"
     >
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+      <motion.div
+        style={{ opacity: contentOpacity }}
+        className="mx-auto max-w-[1600px] px-6 md:px-12"
+      >
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,11 +65,6 @@ export default function WorkSection({
 
             return (
               <div key={project.id} className="flex flex-col">
-                {/*
-                  This is both the measurement target for FlyingCard's end pose
-                  AND the visible in-flow card that takes over once the flying
-                  overlay fades out at scroll completion.
-                */}
                 <div
                   ref={gridSlotRefs[i]}
                   className={`relative aspect-[4/3] w-full overflow-hidden rounded-[20px] md:rounded-[32px] ${bg}`}
@@ -103,7 +106,7 @@ export default function WorkSection({
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

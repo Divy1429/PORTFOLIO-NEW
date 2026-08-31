@@ -33,7 +33,7 @@ export default function Hero({
           <div className="flex max-w-[560px] flex-col md:max-w-[640px]">
             <motion.span
               style={{ opacity: helloOpacity }}
-              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl"
+              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl ml-2"
             >
               Hello
             </motion.span>
@@ -55,7 +55,7 @@ export default function Hero({
 
             <motion.span
               style={{ opacity: hereOpacity }}
-              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl mt-41"
+              className="font-sans text-2xl font-light text-foreground/80 md:text-3xl mt-20 ml-2"
             >
               Here
             </motion.span>
