@@ -3,6 +3,8 @@
 import { projects, type ProjectTag } from "@/data/projects";
 import OrbitScene from "./OrbitScene";
 import DeliveryScene from "./DeliveryScene";
+import ExperienceSection from "./ExperienceSection";
+import AboutSection from "./AboutSection";
 
 const SCENES = { orbit: OrbitScene, delivery: DeliveryScene } as const;
 
@@ -32,8 +34,8 @@ export default function MobileShell() {
           </span>
           <div className="flex gap-4">
             <a href="#work" className="text-xs font-medium text-foreground/80 hover:text-foreground">Work</a>
+            <a href="#experience" className="text-xs font-medium text-foreground/80 hover:text-foreground">Experience</a>
             <a href="#about" className="text-xs font-medium text-foreground/80 hover:text-foreground">About</a>
-            <a href="#resume" className="text-xs font-medium text-foreground/80 hover:text-foreground">Resume</a>
             <a href="#contact" className="text-xs font-medium text-foreground/80 hover:text-foreground">Contact</a>
           </div>
         </nav>
@@ -95,6 +97,12 @@ export default function MobileShell() {
           })}
         </div>
       </section>
+
+      {/* Mobile Experience Section */}
+      <ExperienceSection />
+
+      {/* Mobile About Section */}
+      <AboutSection />
     </div>
   );
 }
