@@ -5,8 +5,8 @@ import type { RefObject } from "react";
 
 const LINKS = [
   { label: "Work", href: "#work" },
+  { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
-  { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
