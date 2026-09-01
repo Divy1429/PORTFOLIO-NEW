@@ -8,34 +8,34 @@ const TECH_STACKS = [
   {
     label: "CLIENT-SIDE",
     bigLabel: "UI",
-    skills: ["React.js", "Next.js", "TypeScript", "Tailwind", "Redux"],
+    skills: ["React.js", "Tailwind CSS", "JavaScript", "HTML5", "Redux"],
   },
   {
     label: "SERVER-SIDE",
-    bigLabel: "DB",
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Prisma"],
+    bigLabel: "API",
+    skills: ["Node.js", "Express.js", "MongoDB", "Redis", "Socket.IO", "Mongoose"],
   },
   {
-    label: "DEPLOYMENT",
+    label: "TOOLS & DEPLOY",
     bigLabel: "OPS",
-    skills: ["AWS", "Docker", "Git", "Nginx", "CI/CD"],
+    skills: ["Git", "GitHub", "Vercel", "MongoDB Atlas", "Netlify", "Cloudinary"],
   },
 ] as const;
 
 const EDUCATION = [
   {
-    period: "2019 — 2023",
-    degree: "BACHELOR OF TECHNOLOGY",
-    field: "Computer Science & Engineering",
+    period: "2022 — 2026 · SPI: 8.00",
+    degree: "B.E. INFORMATION TECHNOLOGY",
+    field: "LDRP Institute of Technology and Research, Gandhinagar, Gujarat",
     description:
-      "Specialized in full-stack architecture, distributed systems, and modern software engineering principles.",
+      "Specialized in Full Stack Web Development (MERN), RESTful API architecture, real-time WebSocket systems, and database engineering.",
   },
   {
-    period: "2017 — 2019",
+    period: "2020 — 2022",
     degree: "HIGHER SECONDARY",
-    field: "Science & Mathematics",
+    field: "Science & Mathematics Stream",
     description:
-      "Foundational studies in Physics, Mathematics, and Computer Science.",
+      "Core studies in Mathematics, Physics, and foundational Computer Science principles.",
   },
 ] as const;
 
