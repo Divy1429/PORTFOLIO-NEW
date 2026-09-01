@@ -4,9 +4,9 @@ import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Divy — Product Designer",
+  title: "Divy — Full Stack Web Developer",
   description:
-    "Product Designer with a love for motion, interaction design and crime documentaries.",
+    "I am a Full Stack Web Developer with experience with 1+ year.",
 };
 
 export default function RootLayout({
