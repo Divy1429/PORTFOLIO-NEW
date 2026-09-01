@@ -148,44 +148,44 @@ function TopographicMapGraphic() {
 /* ─── Mockup Screen Views ─────────────────────────────────────────────────── */
 
 function MockupScreen({ type }: { type: ExperienceItem["screenType"] }) {
-  if (type === "fintech") {
+  if (type === "codage") {
     return (
       <div className="w-full h-full bg-[#FCFCFA] rounded-md border border-neutral-300 p-2.5 flex flex-col justify-between font-mono text-[9px] text-neutral-800 shadow-xs">
         {/* Top App Bar */}
         <div className="flex items-center justify-between border-b border-neutral-200 pb-1.5">
           <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-xs" />
-            <span className="font-bold tracking-tight text-neutral-900 font-sans text-[10px]">PagarBook Core</span>
-            <span className="text-[7.5px] bg-neutral-100 text-neutral-600 px-1 py-0.5 rounded border border-neutral-200">Merchant Ledger</span>
+            <span className="h-2 w-2 rounded-full bg-blue-500 shadow-xs" />
+            <span className="font-bold tracking-tight text-neutral-900 font-sans text-[10px]">Codage UI</span>
+            <span className="text-[7.5px] bg-neutral-100 text-neutral-600 px-1 py-0.5 rounded border border-neutral-200">React & Tailwind</span>
           </div>
           <div className="flex items-center gap-2 text-[8px]">
-            <span className="text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/60">50k+ Daily Txns</span>
+            <span className="text-blue-700 font-semibold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200/60">REST API Connected</span>
           </div>
         </div>
 
-        {/* Ledger Summary Card */}
+        {/* Dynamic Component System Card */}
         <div className="bg-white rounded border border-neutral-200/90 p-2 shadow-xs space-y-1.5">
           <div className="flex items-center justify-between">
-            <span className="font-bold text-[9px] text-neutral-800">Order Reconciliation & Payouts</span>
+            <span className="font-bold text-[9px] text-neutral-800">Reusable Component Library</span>
             <span className="text-[8px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">
-              Synced (84ms)
+              Auth Verified (JWT)
             </span>
           </div>
           <p className="text-[8.5px] text-neutral-600 leading-snug font-sans">
-            Real-time audit pipeline active. Instant invoice generation and payroll disbursements ready.
+            Modular responsive pages with dynamic data integration and secure database authentication.
           </p>
           <div className="grid grid-cols-3 gap-1.5 pt-1 border-t border-neutral-100">
             <div className="bg-neutral-50 p-1 rounded text-center border border-neutral-100">
-              <span className="block text-[7px] text-neutral-400">Response</span>
-              <span className="font-bold text-neutral-800 text-[8.5px]">68ms</span>
+              <span className="block text-[7px] text-neutral-400">Framework</span>
+              <span className="font-bold text-neutral-800 text-[8.5px]">React.js</span>
             </div>
             <div className="bg-neutral-50 p-1 rounded text-center border border-neutral-100">
-              <span className="block text-[7px] text-neutral-400">Reliability</span>
-              <span className="font-bold text-neutral-800 text-[8.5px]">99.98%</span>
+              <span className="block text-[7px] text-neutral-400">Styling</span>
+              <span className="font-bold text-blue-600 text-[8.5px]">Tailwind</span>
             </div>
             <div className="bg-neutral-50 p-1 rounded text-center border border-neutral-100">
-              <span className="block text-[7px] text-neutral-400">Database</span>
-              <span className="font-bold text-emerald-600 text-[8.5px]">PostgreSQL</span>
+              <span className="block text-[7px] text-neutral-400">Security</span>
+              <span className="font-bold text-emerald-600 text-[8.5px]">Bcrypt/Auth</span>
             </div>
           </div>
         </div>
@@ -193,79 +193,47 @@ function MockupScreen({ type }: { type: ExperienceItem["screenType"] }) {
     );
   }
 
-  if (type === "frontend") {
-    return (
-      <div className="w-full h-full bg-[#16161D] rounded-md border border-neutral-700 p-2 flex items-center justify-center gap-3 font-mono">
-        {/* Next.js & UI Architecture Card 1 */}
-        <div className="w-[48%] h-full bg-neutral-900 rounded-[8px] border border-neutral-700 p-1.5 flex flex-col justify-between shadow-md">
-          <div className="flex items-center justify-between border-b border-neutral-800 pb-1">
-            <span className="text-[7.5px] font-bold text-blue-400 tracking-wider">NEXT.JS 15</span>
-            <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-950/60 px-1 rounded">100/100</span>
-          </div>
-          <div className="bg-neutral-800/90 rounded p-1 text-[7.5px] text-neutral-300">
-            <span className="text-blue-300 font-semibold block">⚡ Core Web Vitals</span>
-            <span className="text-[6.5px] text-neutral-400 block mt-0.5">LCP 0.6s · FID 2ms · CLS 0</span>
-          </div>
-          <div className="space-y-0.5">
-            <div className="h-2.5 w-full bg-blue-950/70 rounded border border-blue-800/40 text-[6.5px] text-blue-200 px-1 flex items-center justify-between">
-              <span>Motion Tokens</span>
-              <span className="text-emerald-400">Active</span>
-            </div>
-          </div>
-          <div className="w-full py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded text-[7px] font-bold text-white text-center shadow-xs">
-            Framer Motion UI
-          </div>
-        </div>
-
-        {/* Conversion Analytics Card 2 */}
-        <div className="w-[48%] h-full bg-neutral-900 rounded-[8px] border border-neutral-700 p-1.5 flex flex-col justify-between shadow-md">
-          <div className="flex items-center justify-between border-b border-neutral-800 pb-1">
-            <span className="text-[7.5px] font-bold text-neutral-300">CONVERSION</span>
-            <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-950/60 px-1 rounded">+35%</span>
-          </div>
-          <div className="bg-emerald-950/40 border border-emerald-800/40 rounded p-1 text-center">
-            <span className="text-[7.5px] text-emerald-300 font-bold block">✓ Checkout Funnel</span>
-            <span className="text-[6.5px] text-neutral-400 block">Frictionless UX flow</span>
-          </div>
-          <div className="bg-neutral-800/80 rounded p-1 text-[6.5px] text-neutral-300 space-y-0.5">
-            <div className="flex justify-between"><span>TypeScript:</span><span className="text-blue-300">Strict</span></div>
-            <div className="flex justify-between text-emerald-400"><span>Bounce Rate:</span><span>-42%</span></div>
-          </div>
-          <div className="w-full py-0.5 bg-neutral-800 rounded text-[6.5px] text-neutral-400 text-center font-mono">
-            RESPONSIVE DESIGN
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Backend & Cloud / DevOps
+  // Cognifyz Full Stack View
   return (
-    <div className="w-full h-full bg-[#0D1117] rounded-md border border-neutral-800 p-2.5 flex flex-col justify-between font-mono text-[8px] text-neutral-300">
-      <div className="flex items-center justify-between border-b border-neutral-800 pb-1">
-        <div className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="font-bold text-neutral-100 text-[9.5px]">AWS / DOCKER CI-CD</span>
+    <div className="w-full h-full bg-[#16161D] rounded-md border border-neutral-700 p-2 flex items-center justify-center gap-3 font-mono">
+      {/* Full-Stack API Card 1 */}
+      <div className="w-[48%] h-full bg-neutral-900 rounded-[8px] border border-neutral-700 p-1.5 flex flex-col justify-between shadow-md">
+        <div className="flex items-center justify-between border-b border-neutral-800 pb-1">
+          <span className="text-[7.5px] font-bold text-blue-400 tracking-wider">FULL STACK</span>
+          <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-950/60 px-1 rounded">OPTIMIZED</span>
         </div>
-        <span className="text-emerald-400 bg-emerald-950/70 border border-emerald-800/50 px-1.5 py-0.5 rounded text-[7.5px] font-bold">
-          BUILD PASSING
-        </span>
+        <div className="bg-neutral-800/90 rounded p-1 text-[7.5px] text-neutral-300">
+          <span className="text-blue-300 font-semibold block">⚡ Node & Express</span>
+          <span className="text-[6.5px] text-neutral-400 block mt-0.5">REST API Architecture</span>
+        </div>
+        <div className="space-y-0.5">
+          <div className="h-2.5 w-full bg-blue-950/70 rounded border border-blue-800/40 text-[6.5px] text-blue-200 px-1 flex items-center justify-between">
+            <span>Database Query</span>
+            <span className="text-emerald-400">Optimized</span>
+          </div>
+        </div>
+        <div className="w-full py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded text-[7px] font-bold text-white text-center shadow-xs">
+          Scalable Web Solution
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 my-1">
-        <div className="bg-neutral-900 border border-neutral-800 p-1.5 rounded">
-          <span className="text-neutral-500 block text-[7px]">Pipeline Deploy</span>
-          <span className="text-neutral-100 font-bold text-[10.5px]">6m 12s (Auto)</span>
+      {/* Real-World Project Card 2 */}
+      <div className="w-[48%] h-full bg-neutral-900 rounded-[8px] border border-neutral-700 p-1.5 flex flex-col justify-between shadow-md">
+        <div className="flex items-center justify-between border-b border-neutral-800 pb-1">
+          <span className="text-[7.5px] font-bold text-neutral-300">COLLABORATION</span>
+          <span className="text-[6.5px] text-emerald-400 font-bold bg-emerald-950/60 px-1 rounded">ACTIVE</span>
         </div>
-        <div className="bg-neutral-900 border border-neutral-800 p-1.5 rounded">
-          <span className="text-neutral-500 block text-[7px]">REST API Latency</span>
-          <span className="text-emerald-400 font-bold text-[10.5px]">18 ms avg</span>
+        <div className="bg-emerald-950/40 border border-emerald-800/40 rounded p-1 text-center">
+          <span className="text-[7.5px] text-emerald-300 font-bold block">✓ Project Delivered</span>
+          <span className="text-[6.5px] text-neutral-400 block">End-to-End MERN</span>
         </div>
-      </div>
-
-      <div className="bg-neutral-900/80 border border-neutral-800 rounded p-1 text-[7.5px] text-neutral-400">
-        <span className="text-neutral-200 font-semibold block">Node.js & MongoDB Cluster:</span>
-        <span>Zero-downtime rolling updates verified across all containerized endpoints.</span>
+        <div className="bg-neutral-800/80 rounded p-1 text-[6.5px] text-neutral-300 space-y-0.5">
+          <div className="flex justify-between"><span>Integration:</span><span className="text-blue-300">Clean</span></div>
+          <div className="flex justify-between text-emerald-400"><span>Security:</span><span>Verified</span></div>
+        </div>
+        <div className="w-full py-0.5 bg-neutral-800 rounded text-[6.5px] text-neutral-400 text-center font-mono">
+          COGNIFYZ INTERNSHIP
+        </div>
       </div>
     </div>
   );
@@ -282,25 +250,21 @@ function FolderCard({
   index: number;
   scrollProgress: MotionValue<number>;
 }) {
-  // Stacking scroll timelines:
+  // Stacking scroll timelines for 2 cards:
   // Card 0: resting at center (always visible)
-  // Card 1: slides up between 0.18 and 0.52
-  // Card 2: slides up between 0.52 and 0.86
-  const startProgress = index === 0 ? 0 : 0.18 + (index - 1) * 0.34;
-  const endProgress = index === 0 ? 0 : startProgress + 0.30;
-
+  // Card 1: slides up smoothly between 0.20 and 0.75
   const y = useTransform(
     scrollProgress,
     index === 0
       ? [0, 1]
-      : [startProgress - 0.05, startProgress, endProgress],
-    index === 0 ? [0, 0] : [900, 750, 0]
+      : [0.15, 0.70],
+    index === 0 ? [0, 0] : [900, 0]
   );
 
   const scale = useTransform(
     scrollProgress,
-    [startProgress, endProgress],
-    [0.96, 1]
+    index === 0 ? [0, 1] : [0.20, 0.75],
+    index === 0 ? [1, 1] : [0.96, 1]
   );
 
   return (
@@ -405,7 +369,7 @@ function FolderCard({
                   <span>↳</span>
                 </a>
                 <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest">
-                  DOC. REF #{item.tagNumber}/03
+                  DOC. REF #{item.tagNumber}/02
                 </span>
               </div>
             </div>
@@ -498,7 +462,7 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={containerRef}
-      className="relative bg-background h-[320vh]"
+      className="relative bg-background h-[220vh]"
     >
       {/* Sticky Stage Container */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-between pt-16 md:pt-20 pb-8 px-4 md:px-12 overflow-hidden">
@@ -509,7 +473,7 @@ export default function ExperienceSection() {
               Experience
             </h2>
             <span className="hidden sm:inline-block font-mono text-xs uppercase tracking-widest text-muted">
-              (Career Dossier & Work History)
+              (Career History & Internships)
             </span>
           </div>
           <div className="font-mono text-xs md:text-sm text-foreground/70 tracking-widest">
@@ -517,7 +481,7 @@ export default function ExperienceSection() {
           </div>
         </div>
 
-        {/* The 3 Pinned Stacking Folder Cards */}
+        {/* The 2 Pinned Stacking Folder Cards */}
         <div className="relative flex-1 w-full max-w-[1400px] mx-auto flex items-center justify-center my-2">
           {EXPERIENCES.map((item, index) => (
             <FolderCard
@@ -535,7 +499,7 @@ export default function ExperienceSection() {
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Scroll to browse roles & history</span>
           </div>
-          <span>[ 01 / 02 / 03 ]</span>
+          <span>[ 01 / 02 ]</span>
         </div>
       </div>
     </section>

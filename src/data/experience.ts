@@ -26,13 +26,13 @@ export interface ExperienceItem {
   };
   handwrittenNote: string;
   stickerBadge?: string;
-  screenType: "fintech" | "frontend" | "backend";
+  screenType: "codage" | "cognifyz";
 }
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: "pagarbook-01",
-    tabLabel: "_PAGARBOOK_01",
+    id: "codage-01",
+    tabLabel: "_CODAGE_01",
     tabIndex: 1,
     tabPosition: "left-8 md:left-12",
     folderTheme: {
@@ -41,92 +41,59 @@ export const EXPERIENCES: ExperienceItem[] = [
       folderTabBg: "#B8B590",
     },
     tagNumber: "01",
-    tagCategory: "Full Stack",
+    tagCategory: "Frontend",
     tagBg: "#2563eb",
-    title: "BUILDING REAL-TIME ORDER & WORKFORCE LEDGERS.",
+    title: "BUILDING DYNAMIC UI & SECURE AUTHENTICATION FLOWS.",
     narrative:
-      "Engineered end-to-end order processing pipelines and salary management systems handling 50k+ daily transactions with sub-100ms response times. Architected reusable React component libraries and optimized PostgreSQL database queries for instant audit trails.",
+      "Built responsive, user-friendly pages using React.js and Tailwind CSS, integrating REST APIs for dynamic real-time data display. Developed reusable UI components and implemented backend authentication, securely connecting the client application to the database.",
     narrativeHighlight:
-      "handling 50k+ daily transactions with sub-100ms response times.",
+      "integrating REST APIs for dynamic real-time data display and backend authentication.",
     caseStudyLink: "#experience",
     brief: {
-      company: "PagarBook",
-      classification: "FinTech & SME Order Management Systems",
-      role: "Full Stack Web Developer",
-      period: "2023 — Present · Full-time",
-      status: "Active Production · High Reliability",
+      company: "Codage Habitation",
+      classification: "Modern Web Application & UI Architecture",
+      role: "Frontend Developer Intern",
+      period: "5 Months (Current)",
+      status: "Active Production · React & REST APIs",
       keyAchievements:
-        "Streamlined merchant order-to-payment lifecycle with automated audit logging, real-time WebSocket state synchronization, and instant PDF receipt generation.",
+        "Engineered reusable component systems in React.js and Tailwind CSS. Connected secure authentication endpoints and optimized API payload rendering for high-performance responsive interfaces.",
     },
     handwrittenNote:
-      "Fast UI and reliable ledgers build merchant trust.",
-    stickerBadge: "PAGARBOOK",
-    screenType: "fintech",
+      "Clean component architecture drives responsive user experiences.",
+    stickerBadge: "CODAGE",
+    screenType: "codage",
   },
   {
-    id: "freelance-02",
-    tabLabel: "_FREELANCE_02",
+    id: "cognifyz-02",
+    tabLabel: "_COGNIFYZ_02",
     tabIndex: 2,
-    tabPosition: "left-48 md:left-64",
+    tabPosition: "left-56 md:left-72",
     folderTheme: {
       bg: "#9A9B7A",
       darkEdge: "#3F422E",
       folderTabBg: "#ACAD8E",
     },
     tagNumber: "02",
-    tagCategory: "Frontend Arch",
+    tagCategory: "Full Stack",
     tagBg: "#3b82f6",
-    title: "DESIGNING HIGH-CONVERSION WEBSITES & INTERACTIVE APPS.",
+    title: "DEVELOPING & OPTIMIZING FULL-STACK WEB SOLUTIONS.",
     narrative:
-      "Delivered production-grade Next.js web applications, design systems, and animated landing experiences for global SaaS and e-commerce clients. Focused on core web vitals, accessible interactions, and modern animated interfaces.",
+      "Built and optimized full-stack web applications from front-end interfaces to back-end RESTful APIs and databases. Collaborated with cross-functional teams on multiple real-world projects to deliver scalable, secure, and user-friendly web solutions.",
     narrativeHighlight:
-      "production-grade Next.js web applications, design systems, and animated landing experiences.",
+      "built and optimized full-stack web applications, from front-end interfaces to back-end APIs and databases.",
     caseStudyLink: "#experience",
     brief: {
-      company: "Independent / Client Works",
-      classification: "SaaS Platforms & Modern Web Applications",
-      role: "Lead Frontend & Interaction Engineer",
-      period: "2023 — 2024 · Contract",
-      status: "Shipped & Deployed to Production",
+      company: "Cognifyz Technologies",
+      classification: "Full Stack Engineering & API Optimization",
+      role: "Full Stack Web Developer Intern",
+      period: "Apr — May 2026",
+      status: "Successfully Delivered · Full Stack Solutions",
       keyAchievements:
-        "Engineered custom motion design systems in Framer Motion, improved Lighthouse performance scores to 98+, and reduced checkout drop-offs by 35%.",
+        "Delivered end-to-end full stack web modules with Node.js, Express, and database integrations. Streamlined API routing and improved database query performance across project milestones.",
     },
     handwrittenNote:
-      "Simplicity in interface, precision in architecture.",
-    stickerBadge: "FRONTEND",
-    screenType: "frontend",
-  },
-  {
-    id: "internship-03",
-    tabLabel: "_INTERNSHIP_03",
-    tabIndex: 3,
-    tabPosition: "left-88 md:left-[28rem]",
-    folderTheme: {
-      bg: "#8E9374",
-      darkEdge: "#363A25",
-      folderTabBg: "#A1A784",
-    },
-    tagNumber: "03",
-    tagCategory: "Backend & Cloud",
-    tagBg: "#10b981",
-    title: "SCALING REST APIS & CLOUD DEPLOYMENT PIPELINES.",
-    narrative:
-      "Developed secure RESTful microservices with Node.js and Express, integrated MongoDB/PostgreSQL database schemas, and configured Docker CI/CD automated deployment pipelines on AWS instances with zero-downtime rollouts.",
-    narrativeHighlight:
-      "configured Docker CI/CD automated deployment pipelines on AWS instances with zero-downtime rollouts.",
-    caseStudyLink: "#experience",
-    brief: {
-      company: "Tech Solutions Lab",
-      classification: "Cloud Infrastructure & Backend Systems",
-      role: "Software Engineer Intern",
-      period: "2022 — 2023 · Internship",
-      status: "Successfully Completed & Migrated",
-      keyAchievements:
-        "Containerized legacy service modules with Docker, automated unit & integration testing in GitHub Actions, and reduced deployment time from 40m to 6m.",
-    },
-    handwrittenNote:
-      "Clean code and automated pipelines prevent 90% of bugs.",
-    stickerBadge: "DEVOPS",
-    screenType: "backend",
+      "End-to-end alignment from database schema to UI renders.",
+    stickerBadge: "COGNIFYZ",
+    screenType: "cognifyz",
   },
 ];
