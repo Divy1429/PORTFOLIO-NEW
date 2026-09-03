@@ -33,11 +33,17 @@ export default function MobileShell() {
           <span className="font-display text-xl font-bold leading-none tracking-tight">
             Divy
           </span>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-3.5">
             <a href="#work" className="text-xs font-medium text-foreground/80 hover:text-foreground">Work</a>
             <a href="#experience" className="text-xs font-medium text-foreground/80 hover:text-foreground">Experience</a>
             <a href="#about" className="text-xs font-medium text-foreground/80 hover:text-foreground">About</a>
             <a href="#contact" className="text-xs font-medium text-foreground/80 hover:text-foreground">Contact</a>
+            <a
+              href="/resume"
+              className="border-2 border-foreground bg-foreground px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-background shadow-[2px_2px_0px_0px_var(--accent-mint)]"
+            >
+              CV
+            </a>
           </div>
         </nav>
       </header>

@@ -56,17 +56,14 @@ export default function Nav({
           <a
             href="/resume"
             id="nav-resume-link"
-            className="group hidden items-center gap-2 border-2 border-foreground bg-foreground px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest text-background shadow-[2px_2px_0px_0px_var(--accent-mint)] transition-all hover:-translate-y-px hover:shadow-[4px_4px_0px_0px_var(--accent-mint)] sm:flex"
+            className="group hidden items-center gap-2.5 border-2 border-foreground bg-foreground px-4 py-1.5 font-mono text-[11px] font-bold uppercase tracking-widest text-background shadow-[2px_2px_0px_0px_var(--accent-mint)] transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_var(--accent-mint)] active:translate-y-0 sm:flex"
           >
-            <svg
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="h-3 w-3 transition-transform group-hover:translate-y-0.5"
-              aria-hidden
-            >
-              <path d="M8 12L3 7h3V1h4v6h3L8 12zM1 14h14v1.5H1V14z" />
-            </svg>
-            Resume
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-mint)] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent-mint)]" />
+            </span>
+            <span>Resume</span>
+            <span className="text-background/60 transition-transform group-hover:translate-x-0.5">→</span>
           </a>
         </div>
       </nav>
