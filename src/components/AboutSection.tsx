@@ -211,7 +211,7 @@ function EducationCard({
 
 export default function AboutSection() {
   return (
-    <section id="about" className="bg-background pb-0 pt-24 md:pt-32">
+    <section id="about" className="bg-background pb-24 pt-24 md:pt-32">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
 
         {/* ── Technical Arsenal ── */}
@@ -240,84 +240,12 @@ export default function AboutSection() {
           <SectionLabel>Academic Foundation</SectionLabel>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mb-20">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {EDUCATION.map((edu, i) => (
             <EducationCard key={edu.period} edu={edu} index={i} />
           ))}
         </div>
-
-        {/* ── CTA Banner ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="border-2 border-foreground bg-[var(--tag-green-bg)] shadow-[4px_4px_0px_0px_var(--foreground)] mb-24 flex flex-col gap-6 px-8 py-10 md:flex-row md:items-center md:justify-between"
-        >
-          <div>
-            <h2 className="font-display text-3xl font-black uppercase leading-tight tracking-tight md:text-4xl">
-              Ready for the
-              <br />
-              Next Big Thing.
-            </h2>
-            <div className="mt-3 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent-mint)] animate-pulse" />
-              <p className="text-[10px] font-mono font-semibold uppercase tracking-widest text-foreground/70">
-                Currently open for roles
-              </p>
-            </div>
-          </div>
-
-          <motion.a
-            href="#contact"
-            whileHover={{ y: -3, boxShadow: "6px 6px 0px 0px rgba(0,0,0,0.5)", transition: { duration: 0.15 } }}
-            whileTap={{ y: 0, boxShadow: "2px 2px 0px 0px rgba(0,0,0,0.5)" }}
-            className="inline-block border-2 border-foreground bg-foreground px-8 py-4 text-sm font-bold uppercase tracking-widest text-background whitespace-nowrap"
-          >
-            Hire Divy
-          </motion.a>
-        </motion.div>
-
       </div>
-
-      {/* ── Footer ── */}
-      <footer className="border-t-2 border-foreground/15 bg-background py-6">
-        <div className="mx-auto flex max-w-[1600px] flex-col items-start gap-4 px-6 md:flex-row md:items-center md:justify-between md:px-12">
-          {/* Logo mark */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center border-2 border-foreground bg-foreground text-background text-xs font-bold">
-              D
-            </div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest">
-              Divy / Engineer
-            </span>
-          </div>
-
-          {/* Links */}
-          <div className="flex gap-8">
-            {[
-              { label: "LinkedIn", href: "https://linkedin.com" },
-              { label: "GitHub", href: "https://github.com/Divy1429" },
-              { label: "X", href: "https://x.com" },
-            ].map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono font-semibold uppercase tracking-widest text-foreground/60 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          <p className="text-[10px] font-mono text-foreground/40 uppercase tracking-widest">
-            ©2024 · Divy Patel · All rights reserved
-          </p>
-        </div>
-      </footer>
     </section>
   );
 }

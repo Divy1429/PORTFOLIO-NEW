@@ -5,6 +5,7 @@ import OrbitScene from "./OrbitScene";
 import DeliveryScene from "./DeliveryScene";
 import ExperienceSection from "./ExperienceSection";
 import AboutSection from "./AboutSection";
+import ContactSection from "./ContactSection";
 
 const SCENES = { orbit: OrbitScene, delivery: DeliveryScene } as const;
 
@@ -103,6 +104,9 @@ export default function MobileShell() {
 
       {/* Mobile About Section */}
       <AboutSection />
+
+      {/* Mobile Contact Section */}
+      <ContactSection />
     </div>
   );
 }

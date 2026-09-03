@@ -9,6 +9,7 @@ import FlyingCard from "./FlyingCard";
 import WorkSection from "./WorkSection";
 import ExperienceSection from "./ExperienceSection";
 import AboutSection from "./AboutSection";
+import ContactSection from "./ContactSection";
 import MobileShell from "./MobileShell";
 import { projects } from "@/data/projects";
 import { STACK_CONFIG } from "@/data/cardStack";
@@ -70,6 +71,7 @@ export default function SiteShell() {
       <WorkSection sectionRef={workSectionRef} gridSlotRefs={gridSlotRefs} heroProgress={scrollYProgress} />
       <ExperienceSection />
       <AboutSection />
+      <ContactSection />
     </>
   );
 }
