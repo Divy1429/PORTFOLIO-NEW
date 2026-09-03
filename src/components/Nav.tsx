@@ -41,7 +41,7 @@ export default function Nav({
         </span>
 
         {/* Right-aligned link group */}
-        <div className="flex items-center gap-8 md:gap-10">
+        <div className="flex items-center gap-6 md:gap-8">
           {LINKS.map((link) => (
             <a
               key={link.label}
@@ -51,6 +51,23 @@ export default function Nav({
               {link.label}
             </a>
           ))}
+
+          {/* Resume CTA — visually distinct from nav links */}
+          <a
+            href="/resume"
+            id="nav-resume-link"
+            className="group hidden items-center gap-2 border-2 border-foreground bg-foreground px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest text-background shadow-[2px_2px_0px_0px_var(--accent-mint)] transition-all hover:-translate-y-px hover:shadow-[4px_4px_0px_0px_var(--accent-mint)] sm:flex"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              className="h-3 w-3 transition-transform group-hover:translate-y-0.5"
+              aria-hidden
+            >
+              <path d="M8 12L3 7h3V1h4v6h3L8 12zM1 14h14v1.5H1V14z" />
+            </svg>
+            Resume
+          </a>
         </div>
       </nav>
     </motion.header>

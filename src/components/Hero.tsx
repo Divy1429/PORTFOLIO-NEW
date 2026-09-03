@@ -107,6 +107,28 @@ export default function Hero({
                 </span>
               </div>
             </motion.div>
+
+            {/* ── Resume download CTA ── */}
+            <motion.div
+              style={{ opacity: paraOpacity, y: paraY }}
+              className="mt-6 ml-0.5"
+            >
+              <a
+                href="/resume"
+                id="hero-resume-download"
+                className="group inline-flex items-center gap-3 border-2 border-foreground bg-foreground px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-widest text-background shadow-[3px_3px_0px_0px_var(--accent-mint)] transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_var(--accent-mint)]"
+              >
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5"
+                  aria-hidden
+                >
+                  <path d="M8 12L3 7h3V1h4v6h3L8 12zM1 14h14v1.5H1V14z" />
+                </svg>
+                Download CV
+              </a>
+            </motion.div>
           </div>
         </div>
 

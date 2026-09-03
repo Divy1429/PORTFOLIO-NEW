@@ -11,6 +11,8 @@ import ExperienceSection from "./ExperienceSection";
 import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
 import MobileShell from "./MobileShell";
+import ScrollProgressBar from "./ScrollProgressBar";
+import CursorFollower from "./CursorFollower";
 import { projects } from "@/data/projects";
 import { STACK_CONFIG } from "@/data/cardStack";
 
@@ -43,11 +45,19 @@ export default function SiteShell() {
   });
 
   if (isMobile === true) {
-    return <MobileShell />;
+    return (
+      <>
+        <ScrollProgressBar />
+        <CursorFollower />
+        <MobileShell />
+      </>
+    );
   }
 
   return (
     <>
+      <ScrollProgressBar />
+      <CursorFollower />
       <Nav progress={scrollYProgress} logoSlotRef={logoSlotRef} />
 
       <FlyingLogo
